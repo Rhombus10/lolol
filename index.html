@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	BoogieVsKidBTC
+</title>
+<style>
+
+
+#buttons {
+	position: absolute;
+	width:240px;
+	height:60px;
+	 left:0;
+	 right:0;
+	 margin-left: auto;
+	 margin-right: auto;
+	 top:40%;
+
+
+}
+#BarEmpty {
+	position: absolute;
+	width:200px;
+	height:10px;
+	background-color: #CCCCCC;
+	border-radius: 50px;
+	overflow:hidden;
+    
+
+	
+}
+#Bar {
+	position: absolute;
+	width:0px;
+	height:10px;
+
+	background-color: #909090;
+	-webkit-transition: width 0.5s;
+	
+
+}
+#lol {
+	position: absolute;
+	width:200px;
+	height:10px;
+	left:0;
+	right:0;
+	margin-left: auto;
+	margin-right: auto;
+	top:25%;
+}
+button {
+	 position:absolute;
+    
+	background-color: #F44345;
+	padding:15px 32px;
+	border:none;
+	color:white;
+	border-radius: 5px;
+	
+}
+#kidBTC {
+	position: absolute;
+	right:0px;
+}
+body {
+	background-color: #16171B;
+
+}
+
+
+</style>
+</head>
+<script>
+var Boogie = 0;
+var KidBTC = 0;
+var Total;
+var BarWidth;
+
+function update(){
+document.getElementById("Bar").style.width = BarWidth + "px";
+}
+function Calculate(){
+ Total = Boogie + KidBTC
+ BarWidth = Boogie / Total; 
+ BarWidth = BarWidth * 100;
+ BarWidth = (200/100) * BarWidth;
+ update();
+}
+function adding1(){
+ Boogie =  Boogie + 1;
+ console.log(Boogie);
+ Calculate();
+}
+function adding2(){
+ KidBTC =  KidBTC + 1;
+ console.log(KidBTC);
+ Calculate();
+}
+
+
+
+
+</script>
+<body>
+<div id="buttons"><button onclick="adding1()">Boogie</button>
+<button onclick="adding2()" id='kidBTC'>KidBTC</button></div>
+<div id="lol"><div id='BarEmpty'><div id='Bar'></div></div>
+</div>
+
+
+</body>
+
+</html>
